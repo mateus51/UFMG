@@ -1,4 +1,5 @@
-#Boostnote
+# Boostnote
+
 ###  Descrição do sistema, incluindo principais features, objetivo, linguagem de programação.
 	https://boostnote.io/
 https://github.com/BoostIO/Boostnote
@@ -8,8 +9,9 @@ Autores:
  - Luiz Otávio Caldonazo
  - Mateus Lopes
  - Paulo Vandeveld
-
-<center>![enter image description here](https://image.prntscr.com/image/d984d5c0cee047aaa1cf72a2d77f2860.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/d984d5c0cee047aaa1cf72a2d77f2860.png"/>
+</p>
 
 O **Boostnote** é uma aplicativo open source de criação de notas com foco em desenvolvedores de software mantido sobre a licença GNU GPL v3 e entregue de forma gratuita para os usuários interessados. 
 
@@ -34,7 +36,7 @@ O Boostnote é desenvolvido primariamente em Javascript, uma das principais ling
 Como o Boostnote é open source, aliado à popularidade do Javascript, é possível que os próprios usuários baixem o código fonte, e a modifiquem à seu critério.
 
 
-##Equipe de desenvolvedores e mantenedores:
+## Equipe de desenvolvedores e mantenedores:
 
  - Kazu Yokomizo: Criador do Boostnote
  - Rokt33r 
@@ -44,9 +46,11 @@ Como o Boostnote é open source, aliado à popularidade do Javascript, é possí
  - asmsuechan  
 
 Gráfico de contribuições para a plataforma **Boostnote** através do GitHub:
-![enter image description here](https://image.prntscr.com/image/d33e2e1137d449969f0035276bf543e1.png)
+<p align="center">
+  <img src="https://image.prntscr.com/image/d33e2e1137d449969f0035276bf543e1.png"/>
+</p>
 
-##Breve descrição da evolução do sistema: principais releases e novidades de cada uma.
+## Breve descrição da evolução do sistema: principais releases e novidades de cada uma.
 
 A primeira versão do aplicativo Boostnote foi a versão 0.4.1-beta. Ela foi lançada em 16 de novembro de 2015, nesta versão o aplicativo já era capaz de fazer o conferimento de novas atualizações de forma automática, e tinha também a possibilidade de edição da ordenação e cores para as pastas que estavam disponíveis, além disso havia já uma ferramenta que impossibilitaria o usuário trocar de artigo no momento em que um artigo estava sendo editado. Os ícones de notificação no aparelho foram corrigidos de forma apropriada e além disso também adicionaram a ferramenta de sugestão de tag’s que funciona quando o usuário está editando as suas tags.
 
@@ -65,7 +69,7 @@ A última versão lançada foi a 0.8.9 no dia 29 de abril de 2017 que contou com
 
 ## Principais frameworks, ferramentas e linguagens usadas no desenvolvimento. 
 
-###Principais linguagens de programação utilizadas
+### Principais linguagens de programação utilizadas
 
 | Linguagem de Programação | Porcentagem do código |
 |--------------------------|-----------------------|
@@ -75,7 +79,7 @@ A última versão lançada foi a 0.8.9 no dia 29 de abril de 2017 que contou com
 
 
 	
-###Principais frameworks utilizados: 
+### Principais frameworks utilizados: 
 - [Electron](https://electron.atom.io/)  
 - [React + Redux](http://redux.js.org/) 
 - [Webpack](https://webpack.github.io/) 
@@ -83,7 +87,7 @@ A última versão lançada foi a 0.8.9 no dia 29 de abril de 2017 que contou com
 
 
 
-#**Frameworks**
+# ** Framework s**
 
 ## Electron
 *Electron* é um *framework open-source* que permite ao usuário o desenvolvimento de aplicações desktop com GUIs através da utilização de componentes que são originalmente desenvolvidos para aplicações web. Node.js é utilizado para o desenvolvimento backend, enquanto o Chromium é utilizado para o desenvolvimento frontend. 
@@ -128,7 +132,6 @@ ProfileImage.propTypes = {
 }
 ```
 
----
 ### Webpack
 Webpack é um *module bundler* utilizado em aplicações na linguagem Javascript. Essa ferramenta é utilizada a fim de criar um grafo de dependências da aplicação, em que cada nó é considerado um módulo necessário para a execução da aplicação. Assim que é criado o grafo, o Webpack gera *bundles* (usualmente apenas um é gerado) que posteriormente serão então carregados pelo navegador. Isso atua na melhora do desempenho da aplicação, principalmente em navegadores que utilizam HTTP/1.1, pois conseguem reduzir o tempo em que o navegador se mantém ocioso enquanto espera outra requisição fazer o download das dependências.
 
@@ -161,49 +164,57 @@ var config = Object.assign({}, skeleton, {
 ```
 
 ---
-#Frontend
-##Front-end: HTML + CSS (CSS Modules)
+# Frontend
+## Front-end: HTML + CSS (CSS Modules)
 O *Boostnote* utiliza as ferramentas HTML e CSS para o desenvolvimento frontend, em junção com as ferramentas React e Redux citadas anteriormente. Para a organização do código CSS, é utilizado o CSS Modules, que é um arquivo CSS onde todos os nomes de classes são referenciados localmente, para que não haja a necessidade de especificar o caminho inteiro do arquivo para a classe. Ao utilizá-lo dentro de um módulo da linguagem Javascript, é possível exportar um objeto com o mapeamento de todos os nomes de escopo local para nomes de escopo global.
 
-<center>![enter image description here](https://image.prntscr.com/image/cd275e9caf7940c2b47fd18495c16568.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/cd275e9caf7940c2b47fd18495c16568.png"/>
+</p>
 
 ---
-#**Arquitetura**
+# ** Arquitetura **
 
 A arquitetura do Boostnote está dividida em módulos segundo este diagrama:
-<center>![enter image description here](https://image.prntscr.com/image/f54beefff9904a09a39d5713b88006fb.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/f54beefff9904a09a39d5713b88006fb.png"/>
+</p>
 
 Nesta seção iremos descrever cada um destes módulos, será falado sobre suas funcionalidades, e mostraremos detalhes de implementação e as principais classes. 
 
 ---
-##**Text Editor**
+## ** Text Editor **
 
 Existem duas formas de tomar notas com Boostnote, a primeira é através do uso de Markdown e a segunda se dá através do uso de tags em HTML, aqui será demonstrado como foram implementados os módulos referentes a essas duas funcionalidades.
 
 ---
-###Markdown Editor
+### Markdown Editor
 
 O módulo Markdown Editor é a ferramenta que possibilita aos usuários tomar notas na linguagem simples de marcação Markdown, que converte qualquer texto em XHTML válido. Há, na aplicação, um serviço de visualização prévia em tempo real da conversão para acompanhamento do usuário aumentando assim a qualidade de uso da ferramenta.
 
-####Diagrama de classes:
+#### Diagrama de classes:
 
-<center>![enter image description here](https://image.prntscr.com/image/e60cb59e1d2b4fe49c65ec497737496b.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/e60cb59e1d2b4fe49c65ec497737496b.png"/>
+</p>
 
-*Markdown editor*: Essa classe é responsável por implementar o editor de Markdown da ferramenta Boostnote. Ela é a responsável por toda a renderização do editor na tela, e também pela manipulação de todos os eventos Javascript, como o *onBlur*, listeners para os cliques de botões, além das mudanças de estados.
+* Markdown editor*: Essa classe é responsável por implementar o editor de Markdown da ferramenta Boostnote. Ela é a responsável por toda a renderização do editor na tela, e também pela manipulação de todos os eventos Javascript, como o *onBlur*, listeners para os cliques de botões, além das mudanças de estados.
 
-*MarkdownPreview*: Essa classe faz a implementação de métodos de controle de eventos, aqueles que são iniciados por handle, ela possibilita a visualização prévia do texto na linguagem markdown em tempo real.
+* MarkdownPreview *: Essa classe faz a implementação de métodos de controle de eventos, aqueles que são iniciados por handle, ela possibilita a visualização prévia do texto na linguagem markdown em tempo real.
 
-*MarkdownNoteDetail*: Essa classe é a responsável pela implementação do menu de contexto que é utilizado para comunicar o usuário de informações sobre a atual nota já convertido em Markdown. Assim como as outras classes deste módulo, ela também implementa listeners e ações para os diversos eventos Javascript dentro de seu escopo.
+* MarkdownNoteDetail *: Essa classe é a responsável pela implementação do menu de contexto que é utilizado para comunicar o usuário de informações sobre a atual nota já convertido em Markdown. Assim como as outras classes deste módulo, ela também implementa listeners e ações para os diversos eventos Javascript dentro de seu escopo.
 
 
 ---
-###Tag Editor
+### Tag Editor
 
 O Tag Editor é o módulo que possibilita ao usuário tomar notas utilizando tags no formato HTML.
 
-####Diagrama de classes:
+#### Diagrama de classes:
 
-<center>![enter image description here](https://image.prntscr.com/image/168f561e3f83409b99a32003aa93af09.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/168f561e3f83409b99a32003aa93af09.png"/>
+</p>
 
 
 *CodeEditor*: este componente React declara o editor de texto, incluindo seu comportamento e seu estilo.
@@ -215,15 +226,17 @@ O Tag Editor é o módulo que possibilita ao usuário tomar notas utilizando tag
 
 
 ---
-###Finder
+### Finder
 
 O módulo Finder, como o próprio nome diz, é um buscador que possibilita ao usuário encontrar referências dentro das anotações e no armazenamento, atuando basicamente como um Ctrl+F que tem como referência para a busca todo o sistema. Sua funcionalidade é baseada no Finder dos sistemas operacionais Mac OS X e Linux, permitindo aos usuários assim fazer buscas em todo o SO. A ferramenta Boostnote permite que as notas do usuário sejam indexadas para permitir tal busca.
 
-####Diagrama de classes:
+#### Diagrama de classes:
 
-<center>![enter image description here](https://image.prntscr.com/image/d3001b7e10bd47fc9aa7e4897fe3870c.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/d3001b7e10bd47fc9aa7e4897fe3870c.png"/>
+</p>
 
-*NoteDetail:* Classe responsável por criar uma popup com as notificações de detalhes das notas, implementa função para salvar, e avançar ou retroceder nas notas, assim como a função que renderiza a estilização dessa classe.
+* NoteDetail:* Classe responsável por criar uma popup com as notificações de detalhes das notas, implementa função para salvar, e avançar ou retroceder nas notas, assim como a função que renderiza a estilização dessa classe.
 
 *Notelist*: Essa classe implementa uma lista simples que contém as notas armazenadas com algumas poucas informações extras.
 ```javascript
@@ -270,43 +283,49 @@ nodeIpc.connectTo(
     })
 ```
 ---
-##**User Interface**
+## ** User Interface **
 
 A interface de usuário é composta por um layout que foi desenvolvido em HTML e CSS, utilizando a biblioteca React para a renderização dos componentes, além de um buscador (finder) que tem a capacidade de encontrar referências dentro de notas e storages e, por último pela aba de configuração, por onde são controladas as preferências do usuário em relação ao design do programa, hotkeys e storages.
 
 
 ---
-###Layout
+### Layout
 
 O layout do software é o responsável pela sua aparência, ele também foi feito em HTML e CSS e foi dividido em vários arquivos, abaixo se encontra um lista de todos os arquivos utilizados pelo programa para tratar a sua estilização.
 
-####Lista de arquivos de estilização:
+#### Lista de arquivos de estilização:
 
-<center>![enter image description here](https://image.prntscr.com/image/80a689b9c45b46e5980389218d459548.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/80a689b9c45b46e5980389218d459548.png"/>
+</p>
 
 ---
-###Configuration
+### Configuration
 
 Este módulo do Boostnote é utilizado para inicializar e verificar as configurações estéticas do editor de texto.
-####Diagrama de classes:
+#### Diagrama de classes:
 
-<center>![enter image description here](https://image.prntscr.com/image/e99af693f92642498ca414ca6b55f816.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/e99af693f92642498ca414ca6b55f816.png"/>
+</p>
 
 *configManager*: Esse arquivo da linguagem Javascript possui a declaração de diversas variáveis e métodos do Electron utilizados pela ferramenta Boostnote, entre elas estão as configurações específicas para certos sistemas operacionais, a validação de configurações, o tratamento de exceções para as mesmas, além de configurações default para o editor de texto do programa.
 
 *zoomManager*: Essa classe possui a implementação da função de zoom, e utiliza funcionalidades do framework *Electron* para tal. Ela permite que o nível de zoom na nota possa ser definido pelo próprio usuário, e além disso permite que o frontend use essas mesmas informações para renderizar na tela o nível correto de zoom.
 
 ---
-##**Files Management**
+## ** Files Management **
 
 A ferramenta Boostnote implementa recursos para lidar com arquivos, possibilitando assim a fácil criação e remoção de pastas, a criação e remoção de notas e a organização de suas notas em uma seção que fica dentro do programa chamada storage, isso permite que os usuários possam armazenar suas notas sem a necessidade de haver conexão com a Internet para salvá-las. Abaixo falaremos mais sobre seu sistema de files management. 
 
 ---
-###Storage
+### Storage
 
-####Diagrama de classes:
+#### Diagrama de classes:
 
-<center>![enter image description here](https://image.prntscr.com/image/eaaa028db34441febc239c65fff1270e.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/eaaa028db34441febc239c65fff1270e.png"/>
+</p>
 
 
 *StorageSection*: Essa classe faz a implementação do componente que tem como responsabilidade mostrar ao usuário as notas que estão armazenadas em memória, além de tratar os cliques de input.
@@ -324,11 +343,13 @@ A ferramenta Boostnote implementa recursos para lidar com arquivos, possibilitan
 *StorageTab*: Essa classe faz a declaração do componente do menu lateral (sidebar) que exibe os armazenamentos. Além disso, é também o responsável por tratar todos os eventos Javascript dele.
 
 ---
-###Folders
+### Folders
 
-####Diagrama de classes:
+#### Diagrama de classes:
 
-<center>![enter image description here](https://image.prntscr.com/image/191a20b9f710413da57ecd58e92cf627.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/191a20b9f710413da57ecd58e92cf627.png"/>
+</p>
 
 
 *folderSelect*: Esse módulo é o responsável pela obtenção de quais são as pastas disponíveis no armazenamento local e pela exibição delas ao usuário da aplicação.
@@ -344,11 +365,13 @@ A ferramenta Boostnote implementa recursos para lidar com arquivos, possibilitan
 *CreateFolderModal:* Esste é um componente que é utilizado para a criação do menu de exibição das pastas no armazenamento.
 
 ---
-###Notes
+### Notes
 
-####Diagrama de classes:
+#### Diagrama de classes:
 
-<center>![enter image description here](https://image.prntscr.com/image/2eaf09f6c6194e9491224d2783ccd4ba.png)</center>
+<p align="center">
+  <img src="https://image.prntscr.com/image/2eaf09f6c6194e9491224d2783ccd4ba.png"/>
+</p>
 
 
 *NewNoteModal:* Esta classe é a responsável pela renderização da janela de criação de notas e também pela chamada do método de criação de notas (createNote()).
